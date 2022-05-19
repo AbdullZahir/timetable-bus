@@ -1,0 +1,11 @@
+Temporary solution assignment 2:
+
+- Add a global state called: "response" that is set to false when a fetch call is sent without a response.
+
+- Add a timeout for fetch calls for maximum 2000 milliseconds before a new fetch call is made for an endpoint. The reason for maximum 2 second is that the 
+user does not experience any latency while using the app/system.
+
+- create a function that gets runs everytime before a fetch that checks if the "response" state is true. If the response is true then a fetch can be made, 
+if not then wait for the response to be true. While it waits, it may happen that more calls for that api comes in. Therefore, the function should add all the calls
+in a list, and then resursivly reduce the list until the length of the element is one and further pass that call. In that way, the latest element in the list gets 
+called first. 
